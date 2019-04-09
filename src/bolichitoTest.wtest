@@ -25,13 +25,10 @@ test "El bolichito no es brillante si tiene una pelota y una placa" {
 }
 
 test "El bolichito es monocromático si tiene una remera y una placa roja" {
+	placa.setColor(rojo)
 	bolichito.ponerEnMostrador(remera)
 	bolichito.ponerEnVidriera(placa)
-	assert.notThat(bolichito.esMonocromatico())
-}
-
-test "la placa es de color roja" {
-	assert.equals(rojo, placa.color())
+	assert.that(bolichito.esMonocromatico())
 }
 
 test "El bolichito no es monocromático si tiene una remera y una pelota" {
