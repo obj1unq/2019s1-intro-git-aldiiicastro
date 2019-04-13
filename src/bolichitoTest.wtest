@@ -21,11 +21,11 @@ test "El bolichito es brillante si tiene un muñeco y una placa" {
 test "El bolichito no es brillante si tiene una pelota y una placa" {
 	bolichito.ponerEnMostrador(pelota)
 	bolichito.ponerEnVidriera(placa)
-	assert.notThat(bolichito.esBrillante())
+	assert.notThat(bolichito.esBrillante()) //Es brillante estaba con un "or" y segun la consigna era un "and".
 }
 
 test "El bolichito es monocromático si tiene una remera y una placa roja" {
-	placa.setColor(rojo)
+	placa.setColor(rojo) //La placa tiene color variable entonces hay que setearle un color
 	bolichito.ponerEnMostrador(remera)
 	bolichito.ponerEnVidriera(placa)
 	assert.that(bolichito.esMonocromatico())
@@ -72,9 +72,9 @@ test "El bolichito no puede mejorar si tiene una remera en el mostrador y una pe
 }
 
 test "El bolichito con una remera y una pelota puede ofrecerle algo a Estefanía" {
-	bolichito.ponerEnMostrador(remera)
+	bolichito.ponerEnMostrador(remera) 
 	bolichito.ponerEnVidriera(pelota)
-	assert.that(bolichito.puedeOfrecerleAlgoA(estefania))
+	assert.that(bolichito.puedeOfrecerleAlgoA(estefania)) //Estefania tenia mal lo que recibia en le gusta segun el enunciado.
 }
 
 test "El bolichito con una remera y una pelota puede ofrecerle algo a Juan" {
@@ -88,5 +88,5 @@ test "El bolichito con una remera y una pelota puede ofrecerle algo a Luisa" {
 	bolichito.ponerEnMostrador(remera)
 	bolichito.ponerEnVidriera(pelota)
 	
-	assert.notThat(bolichito.puedeOfrecerleAlgoA(luisa))
+	assert.notThat(bolichito.puedeOfrecerleAlgoA(luisa)) //Luisa no era polimofica.
 }

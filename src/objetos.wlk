@@ -30,12 +30,10 @@ object biblioteca {
 	method peso() { return 8000 }
 }
 
-object munieco {
+object munieco { //Arreglado para que sea solo celeste como dice la consigna
 	var _peso 
-	var _color = rojo
 	
-	method color() { return _color }
-	method setColor(color) { _color = color }
+	method color() { return celeste } 
 	method material() { return vidrio }
 	method peso() { return _peso }
 	method setPeso(peso) { _peso = peso }
